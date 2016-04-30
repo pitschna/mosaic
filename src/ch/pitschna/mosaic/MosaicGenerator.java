@@ -1,5 +1,10 @@
 package ch.pitschna.mosaic;
 
+import ch.pitschna.mosaic.match.MatchMaker;
+import ch.pitschna.mosaic.originalfile.OriginalFileReader;
+import ch.pitschna.mosaic.originalfile.SplitOriginalResult;
+import ch.pitschna.mosaic.tiles.TilesGenerator;
+
 public class MosaicGenerator {
 
     public static void main(String[] args) {
@@ -22,6 +27,7 @@ public class MosaicGenerator {
         // generate tiles
         TilesGenerator.generate(tilesFolder, original.getSizeOfTile());
         // find tile most similar
+        MatchMaker.match(original.getImage(), original.getSizeOfTile());
         // put image together
     }
 }

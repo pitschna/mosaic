@@ -1,8 +1,8 @@
-package ch.pitschna.mosaic;
+package ch.pitschna.mosaic.originalfile;
 
 import java.awt.image.BufferedImage;
 
- class SplitOriginalResult {
+public class SplitOriginalResult {
 
     private final String fileName;
     private final BufferedImage image;
@@ -11,10 +11,10 @@ import java.awt.image.BufferedImage;
     private final Integer numberOfVerticalTiles;
 
     SplitOriginalResult(String fileName,
-                               BufferedImage image,
-                               Integer sizeOfTile,
-                               Integer numberOfHorizontalTiles,
-                               Integer numberOfVerticalTiles) {
+                        BufferedImage image,
+                        Integer sizeOfTile,
+                        Integer numberOfHorizontalTiles,
+                        Integer numberOfVerticalTiles) {
         this.fileName = fileName;
         this.image = image;
         this.sizeOfTile = sizeOfTile;
@@ -22,20 +22,23 @@ import java.awt.image.BufferedImage;
         this.numberOfVerticalTiles = numberOfVerticalTiles;
     }
 
-    String getFileName() {
+    public String getFileName() {
         return fileName;
     }
 
-    Integer getSizeOfTile() {
+    public Integer getSizeOfTile() {
         return sizeOfTile;
     }
 
-    Integer getNumberOfHorizontalTiles() {
+    public Integer getNumberOfHorizontalTiles() {
         return numberOfHorizontalTiles;
     }
 
-    Integer getNumberOfVerticalTiles() {
+    public Integer getNumberOfVerticalTiles() {
         return numberOfVerticalTiles;
     }
 
+    public BufferedImage getImage() {
+        return image;
+    }
 }

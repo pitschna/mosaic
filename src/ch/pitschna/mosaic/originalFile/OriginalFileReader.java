@@ -1,9 +1,11 @@
-package ch.pitschna.mosaic;
+package ch.pitschna.mosaic.originalfile;
+
+import ch.pitschna.mosaic.common.BufferedImageUtil;
 
 import java.awt.image.BufferedImage;
 
-final class OriginalFileReader {
-    static SplitOriginalResult read(String fileName, Integer numberOfHorizontalTiles) {
+public final class OriginalFileReader {
+    public static SplitOriginalResult read(String fileName, Integer numberOfHorizontalTiles) {
         BufferedImage image = BufferedImageUtil.bufferedImageReader(fileName);
 
         Integer sizeOfTile = image.getWidth()/numberOfHorizontalTiles;

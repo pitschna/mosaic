@@ -1,4 +1,4 @@
-package ch.pitschna.mosaic;
+package ch.pitschna.mosaic.common;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 
-final class BufferedImageUtil {
+public final class BufferedImageUtil {
 
-    static BufferedImage bufferedImageReader(String fileName){
+    public static BufferedImage bufferedImageReader(String fileName){
         BufferedImage image = null;
         try {
             image = ImageIO.read(new File(fileName));
@@ -19,7 +19,7 @@ final class BufferedImageUtil {
         return image;
     }
 
-    static void bufferdImageWriter(BufferedImage image, String fileName){
+    public static void bufferdImageWriter(BufferedImage image, String fileName){
         try {
             ImageIO.write(image, "jpg", new File(fileName));
         } catch (IOException e) {
