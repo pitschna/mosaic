@@ -1,8 +1,6 @@
 package ch.pitschna.mosaic.tiles;
 
-import ch.pitschna.mosaic.common.AverageColorResult;
-import ch.pitschna.mosaic.common.BufferedImageUtil;
-import ch.pitschna.mosaic.common.AverageColorCalculator;
+import ch.pitschna.mosaic.common.*;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -11,10 +9,10 @@ import java.io.FilenameFilter;
 public final class TilesGenerator {
 
     private static final String JPG = ".jpg";
-    private static final String TILES = "\\tiles\\";
 
     public static void generate(String folderName, Integer size) {
-        String tilesFolder = folderName + TILES;
+
+        String tilesFolder = FolderNameUtil.getFolderName(folderName);
         new File(tilesFolder).mkdir();
 
         File dir = new File(folderName);
@@ -40,13 +38,4 @@ public final class TilesGenerator {
 
     }
 
-
-    private enum JpgFilter implements FilenameFilter {
-        INSTANCE;
-
-        @Override
-        public boolean accept(File dir, String name) {
-            return name.toLowerCase().endsWith(JPG);
-        }
-    }
 }

@@ -2,6 +2,7 @@ package ch.pitschna.mosaic.common;
 
 
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 public final class AverageColorCalculator {
 
@@ -33,10 +34,24 @@ public final class AverageColorCalculator {
         return getRgb(sumR / (range * range), sumG / (range * range), sumB / (range * range));
     }
 
+    public static ColorResult getColorSinglePixel(BufferedImage image, int startX, int startY){
+        return new ColorResult(calculateOne(image, 1, startX, startY));
+    }
+
     private static int getRgb(int red, int green, int blue) {
         int rgb = red;
         rgb = (rgb << 8) + green;
         rgb = (rgb << 8) + blue;
         return rgb;
+    }
+
+    public static double getRootSquareDeviation(ColorResult colorImage, ColorResult colorTile) {
+        int squareDeviation =0;
+        List<Integer> colorsImage = colorImage.getColors();
+        List<Integer> colorsTile = colorTile.getColors();
+        for (int i = 0; i < colorsImage.size(); i++){
+            squareDeviation += (colorsImage.get(i)- colorsTile.get(i))*(colorsImage.get(i)- colorsTile.get(i));
+        }
+        return Math.sqrt(squareDeviation);
     }
 }

@@ -1,9 +1,12 @@
 package ch.pitschna.mosaic;
 
+import ch.pitschna.mosaic.common.FolderNameUtil;
 import ch.pitschna.mosaic.match.MatchMaker;
 import ch.pitschna.mosaic.originalfile.OriginalFileReader;
 import ch.pitschna.mosaic.originalfile.SplitOriginalResult;
 import ch.pitschna.mosaic.tiles.TilesGenerator;
+
+import java.util.Map;
 
 public class MosaicGenerator {
 
@@ -27,7 +30,7 @@ public class MosaicGenerator {
         // generate tiles
         TilesGenerator.generate(tilesFolder, original.getSizeOfTile());
         // find tile most similar
-        MatchMaker.match(original.getImage(), original.getSizeOfTile());
+        Map<Integer, String> mosaicMap = MatchMaker.match(original, FolderNameUtil.getFolderName(tilesFolder));
         // put image together
     }
 }
