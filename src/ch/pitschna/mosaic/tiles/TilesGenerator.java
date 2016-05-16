@@ -13,14 +13,19 @@ public final class TilesGenerator {
     public static void generate(String folderName, Integer size) {
 
         String tilesFolder = FolderNameUtil.getFolderName(folderName);
-        new File(tilesFolder).mkdir();
+
+        if (!new File(tilesFolder).exists()) {
+            if (!new File(tilesFolder).mkdir()) {
+                System.err.println("Could not create directory " + tilesFolder + ".");
+                System.exit(1);
+            }
+        }
 
         File dir = new File(folderName);
         int fileName = 0;
 
         for (File file : dir.listFiles(JpgFilter.INSTANCE)) {
             BufferedImage image = BufferedImageUtil.bufferedImageReader(file.getAbsolutePath());
-            System.out.println("File name: " + file.getName());
 
             int divisor = Math.min(image.getHeight(), image.getWidth()) / size;
 
@@ -32,10 +37,10 @@ public final class TilesGenerator {
                 }
             }
 
-            AverageColorResult averageColor = AverageColorCalculator.calculateAll(tile);
-            BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + averageColor.getName() + fileName++ + JPG);
+//            AverageColorResult averageColor = AverageColorCalculator.calculateAll(tile);
+//            BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + averageColor.getName() + fileName++ + JPG);
+            BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + fileName++ + JPG);
         }
-
     }
 
 }
