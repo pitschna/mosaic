@@ -27,19 +27,25 @@ public final class TilesGenerator {
         for (File file : dir.listFiles(JpgFilter.INSTANCE)) {
             BufferedImage image = BufferedImageUtil.bufferedImageReader(file.getAbsolutePath());
 
-            int divisor = Math.min(image.getHeight(), image.getWidth()) / size;
+            for (double div = 1; div < 2.5; div *= Math.sqrt(2D)) {
+                int divisor = (int) Math.ceil(Math.min(image.getHeight(), image.getWidth()) / (size * div));
 
-            BufferedImage tile = new BufferedImage(size, size, image.getType());
-            for (int xTile = 0; xTile < size; xTile++) {
-                for (int yTile = 0; yTile < size; yTile++) {
-                    int pixelAverage = AverageColorCalculator.calculateOne(image, divisor, divisor * xTile, divisor * yTile);
-                    tile.setRGB(xTile, yTile, pixelAverage);
+                for (int startX = 0; startX + size * (divisor + 1) < image.getWidth(); startX += size * divisor / 3) {
+                    for (int startY = 0; startY + size * (divisor + 1) < image.getHeight(); startY += size * divisor / 3) {
+
+                        BufferedImage tile = new BufferedImage(size, size, image.getType());
+                        for (int xTile = 0; xTile < size; xTile++) {
+                            for (int yTile = 0; yTile < size; yTile++) {
+                                int averageRgb = AverageColorCalculator.calculateOne(image, divisor,
+                                        startX + divisor * xTile, startY + divisor * yTile);
+                                tile.setRGB(xTile, yTile, averageRgb);
+                            }
+                        }
+
+                        BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + fileName++ + JPG);
+                    }
                 }
             }
-
-//            AverageColorResult averageColor = AverageColorCalculator.calculateAll(tile);
-//            BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + averageColor.getName() + fileName++ + JPG);
-            BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + fileName++ + JPG);
         }
     }
 
