@@ -1,9 +1,6 @@
 package ch.pitschna.mosaic.match;
 
-import ch.pitschna.mosaic.common.AverageColorCalculator;
-import ch.pitschna.mosaic.common.BufferedImageUtil;
-import ch.pitschna.mosaic.common.ColorResult;
-import ch.pitschna.mosaic.common.JpgFilter;
+import ch.pitschna.mosaic.common.*;
 import ch.pitschna.mosaic.originalfile.SplitOriginalResult;
 
 import java.awt.image.BufferedImage;
@@ -11,6 +8,9 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static ch.pitschna.mosaic.common.BufferedImageUtil.bufferedImageReader;
+import static ch.pitschna.mosaic.common.ColorCalculator.*;
 
 public class MatchMaker {
     public static Map<Integer, String> match(SplitOriginalResult originalResult, String tilesFolder) {
@@ -29,20 +29,24 @@ public class MatchMaker {
                 // loop over individual tile of original image
                 // loop over tile images
                 double minimalRmsd = Double.MAX_VALUE;
-                ColorResult originalColor = new ColorResult(AverageColorCalculator.calculateOne(originalImage, sizeOfTile, xTileNumber * sizeOfTile, yTileNumber * sizeOfTile));
+                int originalFileStartX = xTileNumber * sizeOfTile;
+                int originalFileStartY = yTileNumber * sizeOfTile;
+
+                ColorResult originalColor = new ColorResult(calculateOne(originalImage, sizeOfTile, originalFileStartX, originalFileStartY));
 
                 for (File file : dir.listFiles(JpgFilter.INSTANCE)) {
-                    BufferedImage tile = BufferedImageUtil.bufferedImageReader(file.getAbsolutePath());
+                    BufferedImage tile = bufferedImageReader(file.getAbsolutePath());
 
-                    ColorResult tileColor = new ColorResult(AverageColorCalculator.calculateOne(tile, sizeOfTile, 0, 0));
-                    List<Double> colorCorrector = AverageColorCalculator.calculateColorCorrector(originalColor, tileColor);
+                    ColorResult tileColor = new ColorResult(getColorFromFileName(file.getName()));
+                    List<Double> colorCorrector = calculateColorCorrector(originalColor, tileColor);
 
                     double rmsd = 0;
                     for (int xTile = 0; xTile < sizeOfTile; xTile++) {
                         for (int yTile = 0; yTile < sizeOfTile; yTile++) {
-                            ColorResult colorImage = AverageColorCalculator.getColorSinglePixel(originalImage, xTileNumber * sizeOfTile + xTile, yTileNumber * sizeOfTile + yTile);
-                            ColorResult colorTile = AverageColorCalculator.getColorSinglePixel(tile, xTile, yTile, colorCorrector);
-                            rmsd += AverageColorCalculator.getRootSquareDeviation(colorImage, colorTile);
+                            ColorResult colorImage = getColorSinglePixel(originalImage, originalFileStartX + xTile,
+                                    originalFileStartY + yTile);
+                            ColorResult colorTile = getColorSinglePixel(tile, xTile, yTile, colorCorrector);
+                            rmsd += getSquareDeviation(colorImage, colorTile);
                         }
                     }
                     if (minimalRmsd > rmsd) {

@@ -4,11 +4,10 @@ import ch.pitschna.mosaic.common.*;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FilenameFilter;
+
+import static ch.pitschna.mosaic.common.MosaicConstants.*;
 
 public final class TilesGenerator {
-
-    private static final String JPG = ".jpg";
 
     public static void generate(String folderName, Integer size) {
 
@@ -29,6 +28,9 @@ public final class TilesGenerator {
 
             for (double div = 1; div < 2.5; div *= Math.sqrt(2D)) {
                 int divisor = (int) Math.ceil(Math.min(image.getHeight(), image.getWidth()) / (size * div));
+                if (divisor < 1) {
+                    continue;
+                }
 
                 for (int startX = 0; startX + size * (divisor + 1) < image.getWidth(); startX += size * divisor / 3) {
                     for (int startY = 0; startY + size * (divisor + 1) < image.getHeight(); startY += size * divisor / 3) {
@@ -36,13 +38,14 @@ public final class TilesGenerator {
                         BufferedImage tile = new BufferedImage(size, size, image.getType());
                         for (int xTile = 0; xTile < size; xTile++) {
                             for (int yTile = 0; yTile < size; yTile++) {
-                                int averageRgb = AverageColorCalculator.calculateOne(image, divisor,
+                                int averageRgbOnePixel = ColorCalculator.calculateOne(image, divisor,
                                         startX + divisor * xTile, startY + divisor * yTile);
-                                tile.setRGB(xTile, yTile, averageRgb);
+                                tile.setRGB(xTile, yTile, averageRgbOnePixel);
                             }
                         }
-
-                        BufferedImageUtil.bufferdImageWriter(tile, tilesFolder + fileName++ + JPG);
+                        int averageRgbTile = ColorCalculator.calculateOne(tile, size, 0, 0);
+                        BufferedImageUtil.bufferdImageWriter(tile,
+                                tilesFolder + fileName++ + FILE_NAME_SEPARATOR_START + averageRgbTile + FILE_NAME_SEPARATOR_STOP + JPG);
                     }
                 }
             }

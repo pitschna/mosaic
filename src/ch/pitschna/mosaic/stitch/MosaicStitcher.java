@@ -1,21 +1,19 @@
 package ch.pitschna.mosaic.stitch;
 
-import ch.pitschna.mosaic.common.AverageColorCalculator;
+import ch.pitschna.mosaic.common.ColorCalculator;
 import ch.pitschna.mosaic.common.BufferedImageUtil;
 import ch.pitschna.mosaic.common.ColorResult;
-import ch.pitschna.mosaic.common.JpgFilter;
+import ch.pitschna.mosaic.common.MosaicConstants;
 import ch.pitschna.mosaic.originalfile.SplitOriginalResult;
 
-import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static ch.pitschna.mosaic.common.BufferedImageUtil.bufferdImageWriter;
+import static ch.pitschna.mosaic.common.ColorCalculator.*;
 
 public class MosaicStitcher {
     public static void stitch(SplitOriginalResult originalResult, Map<Integer, String> mosaicMap) {
@@ -25,7 +23,8 @@ public class MosaicStitcher {
         Integer numberOfVerticalTiles = originalResult.getNumberOfVerticalTiles();
         String originalFileName = originalResult.getFileName();
         BufferedImage originalImage = originalResult.getImage();
-        BufferedImage mosaicImage = new BufferedImage(sizeOfTile * numberOfHorizontalTiles, sizeOfTile * numberOfVerticalTiles, originalImage.getType());
+        BufferedImage mosaicImage = new BufferedImage(sizeOfTile * numberOfHorizontalTiles, sizeOfTile * numberOfVerticalTiles,
+                originalImage.getType());
 
 
         // loop over original image
@@ -35,23 +34,26 @@ public class MosaicStitcher {
                 String tileName = mosaicMap.get(yTileNumber * numberOfHorizontalTiles + xTileNumber);
                 BufferedImage tile = BufferedImageUtil.bufferedImageReader(tileName);
 
-                // correct the color
-                ColorResult tileColor = new ColorResult(AverageColorCalculator.calculateOne(tile, sizeOfTile, 0, 0));
-                ColorResult originalColor = new ColorResult(AverageColorCalculator.calculateOne(originalImage, sizeOfTile, xTileNumber * sizeOfTile, yTileNumber * sizeOfTile));
+                int originalFileStartX = xTileNumber * sizeOfTile;
+                int originalFileStartY = yTileNumber * sizeOfTile;
 
-                List<Double> colorCorrector = AverageColorCalculator.calculateColorCorrector(originalColor, tileColor);
+                // correct the color
+                ColorResult tileColor = new ColorResult(getColorFromFileName(tileName));
+                ColorResult originalColor = new ColorResult(calculateOne(originalImage, sizeOfTile, originalFileStartX, originalFileStartY));
+
+                List<Double> colorCorrector = calculateColorCorrector(originalColor, tileColor);
 
                 for (int xTile = 0; xTile < sizeOfTile; xTile++) {
                     for (int yTile = 0; yTile < sizeOfTile; yTile++) {
-                        int correctedRgb = AverageColorCalculator.calculateCorrectedRgb(colorCorrector, tile.getRGB(xTile, yTile));
-                        mosaicImage.setRGB(xTileNumber * sizeOfTile + xTile, yTileNumber * sizeOfTile + yTile, correctedRgb);
+                        int correctedRgb = calculateCorrectedRgb(colorCorrector, tile.getRGB(xTile, yTile));
+                        mosaicImage.setRGB(originalFileStartX + xTile, originalFileStartY + yTile, correctedRgb);
                     }
                 }
 
             }
         }
         String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"));
-        BufferedImageUtil.bufferdImageWriter(mosaicImage, originalFileName.replace(".", timeStamp + "."));
+        bufferdImageWriter(mosaicImage, originalFileName.replace(".", timeStamp + "."));
     }
 
 
