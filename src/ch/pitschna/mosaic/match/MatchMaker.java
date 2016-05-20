@@ -1,6 +1,7 @@
 package ch.pitschna.mosaic.match;
 
-import ch.pitschna.mosaic.common.*;
+import ch.pitschna.mosaic.common.JpgFilter;
+import ch.pitschna.mosaic.common.RgbColorResult;
 import ch.pitschna.mosaic.originalfile.SplitOriginalResult;
 
 import java.awt.image.BufferedImage;
@@ -25,6 +26,7 @@ public class MatchMaker {
         BufferedImage originalImage = originalResult.getImage();
 
         File dir = new File(tilesFolder);
+        double rmsd;
 
         // loop over individual tile of original image
         for (int xTileNumber = 0; xTileNumber < numberOfHorizontalTiles; xTileNumber++) {
@@ -43,8 +45,7 @@ public class MatchMaker {
 
                     List<Double> colorCorrector = calculateColorCorrectorForTile(originalColor, file);
 
-                    double rmsd = 0;
-                    rmsd = calculateRmsdForTile(sizeOfTile, originalImage, originalFileStartX, originalFileStartY, tile, colorCorrector, rmsd);
+                    rmsd = calculateRmsdForTile(sizeOfTile, originalImage, originalFileStartX, originalFileStartY, tile, colorCorrector);
                     if (minimalRmsd > rmsd) {
                         minimalRmsd = rmsd;
                         mosaicMap.put(tileNumber, file.getAbsolutePath());
@@ -62,15 +63,8 @@ public class MatchMaker {
         return calculateColorCorrector(originalColor, tileColor);
     }
 
-    private static double calculateRmsdForTile(Integer sizeOfTile, BufferedImage originalImage, int originalFileStartX, int originalFileStartY, BufferedImage tile, List<Double> colorCorrector, double rmsd) {
-        for (int xTile = 0; xTile < sizeOfTile; xTile++) {
-            for (int yTile = 0; yTile < sizeOfTile; yTile++) {
-                RgbColorResult colorImage = getColorSinglePixel(originalImage, originalFileStartX + xTile,
-                        originalFileStartY + yTile);
-                RgbColorResult colorTile = getColorSinglePixel(tile, xTile, yTile, colorCorrector);
-                rmsd += getSquareDeviation(colorImage, colorTile);
-            }
-        }
-        return rmsd;
+    private static double calculateRmsdForTile(Integer sizeOfTile, BufferedImage originalImage, int originalFileStartX,
+                                               int originalFileStartY, BufferedImage tile, List<Double> colorCorrector) {
+        return SumRmsd.calculateRmsd(originalImage, tile, originalFileStartX, originalFileStartY, sizeOfTile, colorCorrector);
     }
 }
