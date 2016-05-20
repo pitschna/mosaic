@@ -51,7 +51,6 @@ class SumRmsd extends RecursiveTask<Double> {
                 rmsd += getSquareDeviation(colorImage, colorTile);
             }
 
-
             return rmsd;
         } else {
             int mid = low + (high - low) / 2;
