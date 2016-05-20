@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="906507c0-72db-4e2d-ad18-8fd11de46232" name="Default" comment="">
+    <list default="true" id="906507c0-72db-4e2d-ad18-8fd11de46232" name="Default" comment="Some more tidy up">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mosaic2.iws" />
@@ -107,8 +107,8 @@
       <file leaf-file-name="RgbColorResult.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="88">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#191#192#0" expanded="true" />
                 <element signature="e#282#283#0" expanded="true" />
@@ -803,7 +803,21 @@
       <option name="project" value="LOCAL" />
       <updated>1463730875716</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Some more tidy up">
+      <created>1463730888398</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1463730888398</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Some more tidy up">
+      <created>1463730946603</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1463730946603</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -850,6 +864,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="improve organisation" />
     <MESSAGE value="read me" />
     <MESSAGE value="mark down my a**" />
@@ -859,6 +874,9 @@
     <MESSAGE value="Try to make code a bit smother" />
     <MESSAGE value="Some more tidy up" />
     <option name="LAST_COMMIT_MESSAGE" value="Some more tidy up" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="88">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#191#192#0" expanded="true" />
             <element signature="e#282#283#0" expanded="true" />
