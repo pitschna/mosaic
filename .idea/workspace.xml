@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="906507c0-72db-4e2d-ad18-8fd11de46232" name="Default" comment="Generate more tiles">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/AverageColorResult.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/AverageColorCalculator.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java" />
+    <list default="true" id="906507c0-72db-4e2d-ad18-8fd11de46232" name="Default" comment="Some more tidy up">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/akunz.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorResult.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/originalFile/OriginalFileReader.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/originalFile/OriginalFileReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java" afterPath="$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java" />
     </list>
@@ -36,21 +39,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MosaicGenerator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java">
+      <file leaf-file-name="OriginalFileReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/OriginalFileReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="132">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OriginalFileReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/OriginalFileReader.java">
+      <file leaf-file-name="BufferedImageUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/BufferedImageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+            <state relative-caret-position="150">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorCalculator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1892">
+              <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,8 +74,8 @@
       <file leaf-file-name="SplitOriginalResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/SplitOriginalResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="472">
+              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
               <folding>
                 <element signature="e#836#837#0" expanded="true" />
                 <element signature="e#867#868#0" expanded="true" />
@@ -82,8 +95,8 @@
       <file leaf-file-name="MosaicStitcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+            <state relative-caret-position="366">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,34 +107,23 @@
       <file leaf-file-name="MatchMaker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+            <state relative-caret-position="1100">
+              <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorResult.java">
+      <file leaf-file-name="RgbColorResult.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="286">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding>
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#276#277#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MosaicConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-              <folding>
-                <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#150#151#0" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#282#283#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,21 +132,18 @@
       <file leaf-file-name="JpgFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding>
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TilesGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java">
+      <file leaf-file-name="MosaicConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="220">
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -154,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/FolderNameUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="38" />
               <folding>
                 <element signature="e#185#186#0" expanded="true" />
                 <element signature="e#226#227#0" expanded="true" />
@@ -214,18 +213,18 @@
         <option value="$PROJECT_DIR$/test/MosaicStitcherTest.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcherTest.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/test/MosaicStitcherTest.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/OriginalFileReader.java" />
         <option value="C:/java/jdk/64/1.8.0_92/jre/lib/rt.jar!/sun/awt/image/ByteInterleavedRaster.class" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstantsTest.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/AverageColorCalculator.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/OriginalFileReader.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java" />
-        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
         <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java" />
+        <option value="$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
       </list>
     </option>
   </component>
@@ -289,6 +288,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -327,28 +328,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mosaic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mosaic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mosaic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mosaic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -442,8 +421,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,6 +429,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -753,7 +731,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ch.pitschna.mosaic.MosaicGenerator" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="C:\data\Mosaic2\mosaic\small\puffin.JPG 50 C:\data\Mosaic2\tiles" />
+      <option name="PROGRAM_PARAMETERS" value="C:\data\Mosaic2\mosaic\normal\puffin.JPG 50 C:\data\Mosaic2\tiles" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -821,7 +799,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463675481645</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Try to make code a bit smother">
+      <created>1463688892470</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1463688892470</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -830,18 +815,17 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33006537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33006537" sideWeight="0.7604167" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -854,6 +838,7 @@
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994361" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -874,19 +859,13 @@
     <MESSAGE value="Find tile with smallest RMSD" />
     <MESSAGE value="Correct the color and stitch the tiles together" />
     <MESSAGE value="Generate more tiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generate more tiles" />
+    <MESSAGE value="Try to make code a bit smother" />
+    <MESSAGE value="Some more tidy up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some more tidy up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -895,14 +874,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
     <entry file="file://$PROJECT_DIR$/mosaic.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -910,13 +882,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorResult.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -939,21 +913,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1025,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,58 +1016,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstantsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstantsTest.java" />
     <entry file="jar://C:/java/jdk/64/1.8.0_92/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="1182" column="32" selection-start-line="1182" selection-start-column="32" selection-end-line="1182" selection-end-column="32" />
           <folding>
-            <element signature="e#46227#46228#0" expanded="true" />
-            <element signature="e#46266#46267#0" expanded="true" />
+            <element signature="e#46227#46228#0" expanded="false" />
+            <element signature="e#46266#46267#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java" />
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="362">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/BufferedImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1458">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="1892">
+          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/ColorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1108,7 +1066,7 @@
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/FolderNameUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="38" />
           <folding>
             <element signature="e#185#186#0" expanded="true" />
             <element signature="e#226#227#0" expanded="true" />
@@ -1118,48 +1076,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/JpgFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding>
-            <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#150#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+        <state relative-caret-position="132">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/OriginalFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="132">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/originalfile/SplitOriginalResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="472">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
           <folding>
             <element signature="e#836#837#0" expanded="true" />
             <element signature="e#867#868#0" expanded="true" />
@@ -1177,27 +1111,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/stitch/MosaicStitcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+        <state relative-caret-position="366">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/tiles/TilesGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/match/MatchMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="1100">
+          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/MosaicGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/MosaicConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="220">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/pitschna/mosaic/common/RgbColorResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

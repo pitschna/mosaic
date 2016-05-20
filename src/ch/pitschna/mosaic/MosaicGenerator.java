@@ -16,7 +16,7 @@ public class MosaicGenerator {
     public static void main(String[] args) {
         if (args.length < 3) {
             System.out.println("run like this:");
-            System.out.println("java MosaicGenerator <name of origninal picture> <number of horizontal tiles> " +
+            System.out.println("java MosaicGenerator <name of original picture> <number of horizontal tiles> " +
                     "<folder with tiles pictures>");
             return;
         }
@@ -29,17 +29,14 @@ public class MosaicGenerator {
         System.out.println("Folder with tiles pictures: " + tilesFolder);
 
         // read in original file
-        System.out.println("\nStart to read in original file: \n\t" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         SplitOriginalResult original = OriginalFileReader.read(fileName, numberOfHorizontalTiles);
         // generate tiles
-        System.out.println("Start to generate tiles: \n\t" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         TilesGenerator.generate(tilesFolder, original.getSizeOfTile());
         // find tile most similar
-        System.out.println("Start to match tiles: \n\t" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         Map<Integer, String> mosaicMap = MatchMaker.match(original, FolderNameUtil.getFolderName(tilesFolder));
         // put image together
-        System.out.println("Start to stitch tiles: \n\t" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         MosaicStitcher.stitch(original, mosaicMap);
+
         System.out.println("Done! \n\t" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
     }
 }

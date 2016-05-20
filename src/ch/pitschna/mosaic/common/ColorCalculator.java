@@ -7,6 +7,7 @@ import java.util.List;
 
 import static ch.pitschna.mosaic.common.MosaicConstants.FILE_NAME_SEPARATOR_START;
 import static ch.pitschna.mosaic.common.MosaicConstants.FILE_NAME_SEPARATOR_STOP;
+import static ch.pitschna.mosaic.common.MosaicConstants.MAX_COLOR;
 
 public final class ColorCalculator {
 
@@ -27,12 +28,12 @@ public final class ColorCalculator {
         return getRgb(sumR / rangeSqare, sumG / rangeSqare, sumB / rangeSqare);
     }
 
-    public static ColorResult getColorSinglePixel(BufferedImage image, int startX, int startY) {
-        return new ColorResult(calculateOne(image, 1, startX, startY));
+    public static RgbColorResult getColorSinglePixel(BufferedImage image, int startX, int startY) {
+        return new RgbColorResult(calculateOne(image, 1, startX, startY));
     }
 
-    public static ColorResult getColorSinglePixel(BufferedImage image, int startX, int startY, List<Double> colorCorrector) {
-        return new ColorResult(calculateCorrectedRgb(colorCorrector, calculateOne(image, 1, startX, startY)));
+    public static RgbColorResult getColorSinglePixel(BufferedImage image, int startX, int startY, List<Double> colorCorrector) {
+        return new RgbColorResult(calculateCorrectedRgb(colorCorrector, calculateOne(image, 1, startX, startY)));
     }
 
     private static int getRgb(int red, int green, int blue) {
@@ -42,7 +43,7 @@ public final class ColorCalculator {
         return rgb;
     }
 
-    public static double getSquareDeviation(ColorResult colorImage, ColorResult colorTile) {
+    public static double getSquareDeviation(RgbColorResult colorImage, RgbColorResult colorTile) {
         int squareDeviation = 0;
         List<Integer> colorsImage = colorImage.getColors();
         List<Integer> colorsTile = colorTile.getColors();
@@ -52,7 +53,7 @@ public final class ColorCalculator {
         return squareDeviation;
     }
 
-    public static List<Double> calculateColorCorrector(ColorResult originalColor, ColorResult tileColor) {
+    public static List<Double> calculateColorCorrector(RgbColorResult originalColor, RgbColorResult tileColor) {
         ArrayList<Double> colorCorrector = new ArrayList<>();
 
         List<Integer> originalColors = originalColor.getColors();
@@ -65,7 +66,7 @@ public final class ColorCalculator {
             } else if (sign < 0) {
                 colorCorrector.add(((double) originalColors.get(i)) / tileColors.get(i));
             } else {
-                colorCorrector.add(-((double) (255 - originalColors.get(i))) / (255 - tileColors.get(i)));
+                colorCorrector.add(-((double) (MAX_COLOR - originalColors.get(i))) / (MAX_COLOR - tileColors.get(i)));
             }
         }
         return colorCorrector;
@@ -73,7 +74,7 @@ public final class ColorCalculator {
 
 
     public static int calculateCorrectedRgb(List<Double> colorCorrector, int rgb) {
-        ColorResult colorToCorrect = new ColorResult(rgb);
+        RgbColorResult colorToCorrect = new RgbColorResult(rgb);
         List<Integer> colorsToCorrectRgb = colorToCorrect.getColors();
 
         List<Integer> correctedColors = new ArrayList<>();
@@ -85,7 +86,7 @@ public final class ColorCalculator {
             if (corrector > 0) {
                 correctedColors.add((int) (color * corrector));
             } else {
-                correctedColors.add((int) (255 + ((255 - color) * corrector)));
+                correctedColors.add((int) (MAX_COLOR + ((MAX_COLOR - color) * corrector)));
             }
         }
         return getRgb(correctedColors.get(0), correctedColors.get(1), correctedColors.get(2));
