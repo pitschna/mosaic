@@ -39,15 +39,13 @@ public class MatchMaker {
                     int originalFileStartX = xTileNumber * sizeOfTile;
                     int originalFileStartY = yTileNumber * sizeOfTile;
                     int tileNumber = yTileNumber * numberOfHorizontalTiles + xTileNumber;
-                    rmsdMap.put(tileNumber, Double.MAX_VALUE);
-
                     RgbColorResult originalColor = getOriginalColor(originalColorMap, sizeOfTile,
                             originalImage, originalFileStartX, originalFileStartY, tileNumber);
 
                     List<Double> colorCorrector = calculateColorCorrectorForTile(originalColor, file);
 
                     double rmsd = SumRmsd.calculateRmsd(originalImage, tile, originalFileStartX, originalFileStartY, sizeOfTile, colorCorrector);
-                    if (rmsdMap.get(tileNumber) > rmsd) {
+                    if (rmsdMap.get(tileNumber) == null || rmsdMap.get(tileNumber) > rmsd) {
                         rmsdMap.put(tileNumber, rmsd);
                         mosaicMap.put(tileNumber, file.getAbsolutePath());
                     }

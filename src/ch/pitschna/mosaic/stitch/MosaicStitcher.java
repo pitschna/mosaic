@@ -30,7 +30,8 @@ public class MosaicStitcher {
         saveMosaicImage(originalFileName, mosaicImage);
     }
 
-    private static void stitchTilesTogether(Map<Integer, String> mosaicMap, Integer sizeOfTile, Integer numberOfHorizontalTiles, Integer numberOfVerticalTiles, BufferedImage originalImage, BufferedImage mosaicImage) {
+    private static void stitchTilesTogether(Map<Integer, String> mosaicMap, Integer sizeOfTile, Integer numberOfHorizontalTiles,
+                                            Integer numberOfVerticalTiles, BufferedImage originalImage, BufferedImage mosaicImage) {
         // loop over original image
         for (int xTileNumber = 0; xTileNumber < numberOfHorizontalTiles; xTileNumber++) {
             for (int yTileNumber = 0; yTileNumber < numberOfVerticalTiles; yTileNumber++) {
@@ -50,7 +51,7 @@ public class MosaicStitcher {
     }
 
     private static void saveMosaicImage(String originalFileName, BufferedImage mosaicImage) {
-        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"));
+        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
         bufferdImageWriter(mosaicImage, originalFileName.replace(JPG, timeStamp + JPG));
     }
 
