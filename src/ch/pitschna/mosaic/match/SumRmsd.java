@@ -41,9 +41,10 @@ class SumRmsd extends RecursiveTask<Double> {
     }
 
     protected Double compute() {
-        if (high - low < 1) {
+        if ((high - low) < 3) {
             double rmsd = 0;
-            for (int yTile = 0; yTile < sizeOfTile; yTile++) {
+
+            for (int yTile = 0; yTile < sizeOfTile; yTile += 3) {
                 RgbColorResult colorImage = getColorSinglePixel(originalImage, originalFileStartX + low,
                         originalFileStartY + yTile);
                 RgbColorResult colorTile = getColorSinglePixel(tile, low, yTile, colorCorrector);

@@ -1,6 +1,7 @@
 package ch.pitschna.mosaic.tiles;
 
-import ch.pitschna.mosaic.common.*;
+import ch.pitschna.mosaic.common.FolderNameUtil;
+import ch.pitschna.mosaic.common.JpgFilter;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static ch.pitschna.mosaic.common.BufferedImageUtil.bufferdImageWriter;
+import static ch.pitschna.mosaic.common.BufferedImageUtil.bufferedImageReader;
 import static ch.pitschna.mosaic.common.ColorCalculator.calculateOne;
 import static ch.pitschna.mosaic.common.MosaicConstants.*;
 
@@ -28,7 +30,7 @@ public final class TilesGenerator {
         int fileName = 0;
 
         for (File file : dir.listFiles(JpgFilter.INSTANCE)) {
-            BufferedImage image = BufferedImageUtil.bufferedImageReader(file.getAbsolutePath());
+            BufferedImage image = bufferedImageReader(file.getAbsolutePath());
             int height = image.getHeight();
             int width = image.getWidth();
 
@@ -39,16 +41,16 @@ public final class TilesGenerator {
                 }
 
                 int maxAddedPixels = size * (divisor + 1);
-                int shift = size * divisor / 3;
+                int shift = size * divisor / 5;
 
+                int range = divisor > 10 ? 10 : divisor;
                 for (int startX = 0; startX + maxAddedPixels < width; startX += shift) {
                     for (int startY = 0; startY + maxAddedPixels < height; startY += shift) {
 
                         BufferedImage tile = new BufferedImage(size, size, image.getType());
                         for (int xTile = 0; xTile < size; xTile++) {
                             for (int yTile = 0; yTile < size; yTile++) {
-                                int averageRgbOnePixel = calculateOne(image, divisor,
-                                        startX + divisor * xTile, startY +  divisor * yTile);
+                                int averageRgbOnePixel = calculateOne(image, range, startX + divisor * xTile, startY + divisor * yTile);
                                 tile.setRGB(xTile, yTile, averageRgbOnePixel);
                             }
                         }

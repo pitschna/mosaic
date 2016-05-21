@@ -12,7 +12,6 @@ import java.util.Map;
 
 import static ch.pitschna.mosaic.common.BufferedImageUtil.bufferdImageWriter;
 import static ch.pitschna.mosaic.common.ColorCalculator.*;
-import static ch.pitschna.mosaic.common.MosaicConstants.JPG;
 
 public class MosaicStitcher {
     public static void stitch(SplitOriginalResult originalResult, Map<Integer, String> mosaicMap) {
@@ -52,7 +51,7 @@ public class MosaicStitcher {
 
     private static void saveMosaicImage(String originalFileName, BufferedImage mosaicImage) {
         String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
-        bufferdImageWriter(mosaicImage, originalFileName.replace(JPG, timeStamp + JPG));
+        bufferdImageWriter(mosaicImage, originalFileName.replace(".", timeStamp + "."));
     }
 
     private static List<Double> calculateColorCorrectorForTile(Integer sizeOfTile, BufferedImage originalImage, String tileName, int originalFileStartX, int originalFileStartY) {
